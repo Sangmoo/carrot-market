@@ -5,19 +5,32 @@ const Home: NextPage = () => {
     <div className="grid min-h-screen gap-10 bg-slate-400 py-20 px-20">
       <div className="roundded-3x1 bg-white p-6 shadow-xl">
         <span className="text-2xl font-semibold">Select Item</span>
-        <div className="my-2 flex justify-between">
-          <span className="text-gray-500">Gray Bed</span>
-          <span className="font-semibold">$20</span>
-        </div>
-        <div className="felx justify-between">
-          <span className="text-gray-500">Gray Bed</span>
-          <span className="font-semibold">$20</span>
-        </div>
+        <ul>
+          {[1, 2, 3, 4].map((i) => (
+            <div
+              key={i}
+              className="my-2 flex justify-between first:bg-teal-50 last:bg-amber-50 odd:bg-blue-50 even:bg-yellow-50"
+            >
+              <span className="text-gray-500">Gray Chair</span>
+              <span className="font-semibold">$20</span>
+            </div>
+          ))}
+        </ul>
+        <ul>
+          {["a", "b", "c", "d", ""].map((c, i) => (
+            <li className="bg-red-500 py-2 empty:hidden" key={i}>
+              {c}
+            </li>
+          ))}
+        </ul>
         <div className="mt-2 flex justify-between border-t-2 border-dashed pt-2">
           <span>Total</span>
           <span className="font-semibold">$30</span>
         </div>
-        <button className="mx-auto mt-5 w-3/4 rounded-xl bg-blue-500 p-3 text-center text-white hover:bg-teal-500 hover:text-black focus:bg-red-500 active:bg-yellow-500">
+        <button
+          className="mx-auto mt-5 block w-3/4 rounded-xl bg-blue-500 p-3 text-center text-white hover:bg-teal-500 
+          hover:text-black focus:bg-red-500 active:bg-yellow-500"
+        >
           CheckOut
         </button>
       </div>
@@ -57,9 +70,9 @@ const Home: NextPage = () => {
           <span className="text-xs text-gray-500">Chair</span>
           <div className="mt-3 mb-5 flex items-center justify-between">
             <div className="space-x-2">
-              <button className="h-5 w-5 rounded-full bg-yellow-500" />
-              <button className="h-5 w-5 rounded-full bg-indigo-500" />
-              <button className="h-5 w-5 rounded-full bg-teal-500" />
+              <button className="h-5 w-5 rounded-full bg-yellow-500 ring-yellow-500 ring-offset-2 transition focus:ring-2" />
+              <button className="h-5 w-5 rounded-full bg-indigo-500 ring-indigo-500 ring-offset-2 transition focus:ring-2" />
+              <button className="h-5 w-5 rounded-full bg-teal-500 ring-teal-500 ring-offset-2 transition focus:ring-2" />
             </div>
             <div className="flex items-center space-x-5">
               <button className=" flex aspect-square w-8 justify-center rounded-lg bg-blue-200 text-xl text-gray-500">
